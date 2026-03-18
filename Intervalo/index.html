@@ -35,9 +35,6 @@
 
     /* ── Header ── */
     .header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
       margin-bottom: 2.5rem;
       padding-bottom: 1.5rem;
       border-bottom: 1px solid var(--border);
@@ -46,17 +43,13 @@
     .back {
       color: var(--muted);
       font-size: 0.85rem;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 0.35rem;
+      margin-bottom: 1rem;
     }
 
     .back:hover { color: var(--accent); text-decoration: none; }
-
-    .header-main {
-      display: flex;
-      flex-direction: column;
-    }
 
     .app-badge {
       display: inline-flex;
@@ -72,7 +65,6 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
       margin-bottom: 0.6rem;
-      width: fit-content;
     }
 
     h1 {
@@ -88,59 +80,45 @@
       margin-top: 0.4rem;
     }
 
-    /* ── Zero-data highlight ── */
-    .highlight-box {
-      background: var(--accent-glow);
-      border: 1px solid rgba(124,106,255,0.35);
-      border-radius: 14px;
-      padding: 1.25rem 1.5rem;
+    /* ── Summary cards ── */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
       margin-bottom: 2.5rem;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
     }
 
-    .highlight-icon {
-      font-size: 1.5rem;
-      line-height: 1;
-      flex-shrink: 0;
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
     }
 
-    .highlight-text strong {
-      display: block;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-
-    .highlight-text p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
+    .summary-card .icon { font-size: 1.25rem; margin-bottom: 0.4rem; }
+    .summary-card .label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem; }
+    .summary-card .value { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+    .summary-card .value.good { color: #5fcc8a; }
+    .summary-card .value.note { color: #e8c96a; }
 
     /* ── Sections ── */
-    section {
-      margin-bottom: 2.25rem;
-    }
+    section { margin-bottom: 2.25rem; }
 
     h2 {
       font-size: 1.05rem;
       font-weight: 700;
       letter-spacing: -0.01em;
       color: var(--text);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.65rem;
       padding-left: 0.75rem;
       border-left: 2px solid var(--accent);
     }
 
-    p, li {
-      font-size: 0.92rem;
-      color: #b8b8d0;
-    }
+    p, li { font-size: 0.92rem; color: #b8b8d0; }
 
-    ul {
+    p + p { margin-top: 0.6rem; }
+
+    ul, ol {
       list-style: none;
       padding-left: 0;
       display: flex;
@@ -153,6 +131,57 @@
       color: var(--accent);
       margin-right: 0.5rem;
     }
+
+    ol { counter-reset: ol; }
+    ol li { counter-increment: ol; }
+    ol li::before {
+      content: counter(ol) ".";
+      color: var(--accent);
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.87rem;
+      margin-top: 0.5rem;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 0.55rem 0.75rem;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .data-table th:first-child { border-radius: 8px 0 0 8px; }
+    .data-table th:last-child  { border-radius: 0 8px 8px 0; }
+
+    .data-table td {
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: #b8b8d0;
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .tag {
+      display: inline-block;
+      padding: 0.1rem 0.5rem;
+      border-radius: 5px;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    .tag-device { background: rgba(95,204,138,0.12); color: #5fcc8a; }
+    .tag-apple  { background: rgba(232,201,106,0.12); color: #e8c96a; }
 
     /* ── Contact card ── */
     .contact-card {
@@ -182,88 +211,169 @@
 <body>
   <div class="page">
 
+    <!-- Header -->
     <div class="header">
-      <div class="header-main">
-        <a class="back" href="../">← All Apps</a>
-        <div class="app-badge">iOS App</div>
-        <h1>Privacy Policy</h1>
-        <div class="meta">Intervalo &nbsp;·&nbsp; Last updated: March 18, 2026</div>
-      </div>
+      <a class="back" href="../">← All Apps</a>
+      <div class="app-badge">iOS App</div>
+      <h1>Privacy Policy</h1>
+      <div class="meta">Intervalo &nbsp;·&nbsp; Last updated: March 18, 2026</div>
     </div>
 
-    <div class="highlight-box">
-      <div class="highlight-icon">🔒</div>
-      <div class="highlight-text">
-        <strong>No data collected — ever.</strong>
-        <p>Intervalo does not collect, store, transmit, or share any personal information. Everything stays on your device.</p>
+    <!-- At-a-glance summary -->
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="icon">📡</div>
+        <div class="label">Data collected</div>
+        <div class="value good">None from you</div>
+      </div>
+      <div class="summary-card">
+        <div class="icon">📊</div>
+        <div class="label">Analytics / tracking</div>
+        <div class="value good">None</div>
+      </div>
+      <div class="summary-card">
+        <div class="icon">💳</div>
+        <div class="label">Purchases</div>
+        <div class="value note">Via Apple only</div>
+      </div>
+      <div class="summary-card">
+        <div class="icon">💾</div>
+        <div class="label">Storage</div>
+        <div class="value good">On-device only</div>
       </div>
     </div>
 
     <section>
       <h2>Overview</h2>
       <p>
-        This Privacy Policy describes how Intervalo ("the App", "we", "our") handles information when you use our iOS application. We are committed to protecting your privacy. This policy applies to all versions of Intervalo available on the Apple App Store.
+        This Privacy Policy describes how Intervalo ("the App", "we", "our") handles information when you use our iOS application. We are strongly committed to your privacy. The App is designed to function entirely on your device and does not collect personal data.
+      </p>
+      <p>
+        This policy applies to all versions of Intervalo distributed via the Apple App Store.
       </p>
     </section>
 
     <section>
-      <h2>Information We Collect</h2>
-      <p>
-        <strong>We do not collect any personal information.</strong> The App functions entirely on your device and does not transmit any data to us or any third party. Specifically, we do not collect:
-      </p>
+      <h2>Data We Do Not Collect</h2>
+      <p>We do not collect, transmit, or store on our servers any of the following:</p>
       <ul>
-        <li>Name, email address, or any identifiers</li>
-        <li>Device identifiers or advertising identifiers</li>
+        <li>Name, email address, or any personal identifiers</li>
+        <li>Device identifiers or advertising identifiers (IDFA)</li>
         <li>Location data</li>
         <li>Health or fitness data</li>
-        <li>Usage data, analytics, or diagnostics</li>
         <li>Contacts, photos, or media</li>
+        <li>Microphone or camera input</li>
+        <li>Crash reports or usage analytics</li>
         <li>Financial or payment information</li>
       </ul>
     </section>
 
     <section>
-      <h2>Data Storage</h2>
+      <h2>Data Stored on Your Device</h2>
       <p>
-        All app settings, timers, and preferences you create within Intervalo are stored locally on your device using Apple's standard on-device storage. This data never leaves your device and is fully under your control. Deleting the app removes all associated data.
+        The App saves the following data <strong>locally on your device only</strong>, using Apple's standard on-device storage (AsyncStorage). This data is never transmitted to us or any third party.
+      </p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Purpose</th>
+            <th>Stored</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Workout definitions</td>
+            <td>Saves your custom interval timers</td>
+            <td><span class="tag tag-device">Device only</span></td>
+          </tr>
+          <tr>
+            <td>Session history</td>
+            <td>Last 50 completed workout sessions (date, duration, phase count)</td>
+            <td><span class="tag tag-device">Device only</span></td>
+          </tr>
+          <tr>
+            <td>Preferences</td>
+            <td>Sound theme, haptics, display settings, accent color</td>
+            <td><span class="tag tag-device">Device only</span></td>
+          </tr>
+          <tr>
+            <td>Subscription status</td>
+            <td>Whether Pro is active (granted by Apple; no payment details stored)</td>
+            <td><span class="tag tag-device">Device only</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:0.75rem;">
+        Deleting the App removes all of this data from your device permanently.
       </p>
     </section>
 
     <section>
-      <h2>Third-Party Services</h2>
+      <h2>Audio</h2>
       <p>
-        Intervalo does not integrate any third-party analytics, advertising, crash-reporting SDKs, or tracking frameworks. We do not use Google Analytics, Firebase, Amplitude, or any similar service.
+        The App plays audio cues (interval sounds) during workouts using your device's speaker. Audio is used for <strong>playback only</strong> — the App never accesses the microphone and does not record audio.
       </p>
-      <p style="margin-top:0.75rem;">
-        The App is distributed via the Apple App Store. Apple may collect certain data as part of operating the App Store platform, subject to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.
+    </section>
+
+    <section>
+      <h2>In-App Purchases</h2>
+      <p>
+        Intervalo offers an optional Pro subscription sold through the Apple App Store. All purchase transactions are handled entirely by Apple — we never receive, process, or store your payment information, Apple ID, or billing details.
       </p>
+      <p>
+        When you purchase or restore a subscription, Apple communicates the purchase result to the App. The App stores only a local flag indicating whether Pro access is active. For details on how Apple handles your purchase data, see <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>External Content</h2>
+      <p>
+        Workout cover images are loaded from <strong>Unsplash</strong> (<a href="https://unsplash.com/privacy" target="_blank" rel="noopener">unsplash.com</a>), a third-party image CDN. When the App displays a workout card, your device fetches the image directly from Unsplash's servers. Unsplash may log standard request metadata (IP address, timestamp) per their own privacy policy. No personal data from within the App is sent to Unsplash.
+      </p>
+    </section>
+
+    <section>
+      <h2>Third-Party SDKs & Analytics</h2>
+      <p>
+        The App does not integrate any analytics, advertising, crash-reporting, or tracking SDKs. Specifically, the App does not use:
+      </p>
+      <ul>
+        <li>Google Analytics, Firebase, or any Google SDK</li>
+        <li>Amplitude, Mixpanel, Segment, or similar analytics</li>
+        <li>Sentry, Bugsnag, Crashlytics, or crash-reporting tools</li>
+        <li>Any advertising network or ad SDK</li>
+      </ul>
     </section>
 
     <section>
       <h2>Children's Privacy</h2>
       <p>
-        Intervalo does not collect any data from any users, including children under the age of 13. The App is fully compliant with the Children's Online Privacy Protection Act (COPPA) and Apple's guidelines for apps available to children.
+        The App does not collect data from any users, including children under 13. It is compliant with the Children's Online Privacy Protection Act (COPPA) and Apple's guidelines for apps available to younger audiences.
       </p>
     </section>
 
     <section>
       <h2>Your Rights</h2>
       <p>
-        Because we collect no personal data, there is nothing to access, correct, export, or delete on our end. All data the App stores resides locally on your device and can be removed at any time by deleting the App.
+        Because we do not collect personal data on our servers, there is no data for us to provide, correct, or delete on your behalf. All data the App stores resides locally on your device and is fully under your control — you can delete it at any time by removing the App.
+      </p>
+      <p>
+        If you have questions about the purchase data Apple holds, please refer to Apple's privacy tools at <a href="https://privacy.apple.com" target="_blank" rel="noopener">privacy.apple.com</a>.
       </p>
     </section>
 
     <section>
       <h2>Changes to This Policy</h2>
       <p>
-        We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this policy periodically. Continued use of the App after any changes constitutes your acceptance of the updated policy.
+        We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date. Continued use of the App after changes constitutes acceptance of the revised policy.
       </p>
     </section>
 
     <section>
-      <h2>Contact Us</h2>
+      <h2>Contact</h2>
       <div class="contact-card">
-        <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
+        <p>If you have questions or concerns about this Privacy Policy, please reach out:</p>
         <p><strong>Developer:</strong> Patrycja Rychlik</p>
         <p><strong>Email:</strong> <a href="mailto:contact@patrycjarychlik.com">contact@patrycjarychlik.com</a></p>
       </div>
