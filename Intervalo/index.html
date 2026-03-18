@@ -5,40 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy – Intervalo</title>
   <style>
-    body {
-      max-width: 600px;
-      margin: 60px auto;
-      padding: 0 24px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #1c1c1e;
-      background: #fff;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f13;
+      --surface: #1a1a22;
+      --border: #2a2a38;
+      --accent: #7c6aff;
+      --text: #e8e8f0;
+      --muted: #8888aa;
     }
-    h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
-    .meta { color: #888; font-size: 13px; margin-bottom: 32px; }
-    h2 { font-size: 15px; font-weight: 600; margin: 24px 0 6px; }
-    p { color: #3a3a3c; margin: 0; }
-    a { color: #007aff; }
-    footer { margin-top: 48px; color: #aaa; font-size: 12px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page { max-width: 620px; margin: 0 auto; }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .back:hover { color: var(--accent); text-decoration: none; }
+
+    .app-badge {
+      display: inline-block;
+      background: rgba(124,106,255,0.12);
+      border: 1px solid rgba(124,106,255,0.3);
+      border-radius: 8px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.35rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      padding-left: 0.75rem;
+      border-left: 2px solid var(--accent);
+      margin: 1.75rem 0 0.5rem;
+    }
+
+    p { color: #b8b8d0; }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.4rem;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+    }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <div class="meta">Intervalo · Last updated: March 18, 2026</div>
+  <div class="page">
+    <a class="back" href="../">← All Apps</a>
+    <div class="app-badge">iOS App</div>
+    <h1>Privacy Policy</h1>
+    <div class="meta">Intervalo · Last updated: March 18, 2026</div>
 
-  <h2>Data Collection</h2>
-  <p>Intervalo does not collect, store, or share any personal data. All app data (workouts, history, preferences) is stored locally on your device and never transmitted anywhere.</p>
+    <h2>Data Collection</h2>
+    <p>Intervalo does not collect, store, or share any personal data. All app data (workouts, history, preferences) is stored locally on your device and never transmitted anywhere.</p>
 
-  <h2>In-App Purchases</h2>
-  <p>Purchases are processed by Apple. We do not receive or store any payment or billing information.</p>
+    <h2>In-App Purchases</h2>
+    <p>Purchases are processed by Apple. We do not receive or store any payment or billing information.</p>
 
-  <h2>Third Parties</h2>
-  <p>The app contains no analytics, advertising, or tracking SDKs. Workout images are loaded from <a href="https://unsplash.com/privacy" target="_blank">Unsplash</a>.</p>
+    <h2>Third Parties</h2>
+    <p>The app contains no analytics, advertising, or tracking SDKs. Workout images are loaded from <a href="https://unsplash.com/privacy" target="_blank" rel="noopener">Unsplash</a>.</p>
 
-  <h2>Contact</h2>
-  <p>Questions? Email <a href="mailto:contact@patrycjarychlik.com">contact@patrycjarychlik.com</a></p>
+    <h2>Contact</h2>
+    <div class="contact-card">
+      <p>Questions? Email <a href="mailto:contact@patrycjarychlik.com">contact@patrycjarychlik.com</a></p>
+    </div>
 
-  <footer>© 2026 Patrycja Rychlik</footer>
+    <footer>
+      <span>© 2026 Patrycja Rychlik</span>
+      <span>Intervalo Privacy Policy</span>
+    </footer>
+  </div>
 </body>
 </html>
