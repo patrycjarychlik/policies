@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Policies</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f13;
+      --surface: #1a1a22;
+      --border: #2a2a38;
+      --accent: #7c6aff;
+      --accent-glow: rgba(124, 106, 255, 0.15);
+      --text: #e8e8f0;
+      --muted: #8888aa;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo {
+      width: 52px;
+      height: 52px;
+      background: var(--accent-glow);
+      border: 1px solid var(--accent);
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo svg { width: 26px; height: 26px; fill: var(--accent); }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .apps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .app-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .app-card:hover {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+    }
+
+    .app-info { text-align: left; }
+    .app-name { font-weight: 600; font-size: 1rem; }
+    .app-desc { color: var(--muted); font-size: 0.82rem; margin-top: 2px; }
+
+    .arrow {
+      color: var(--muted);
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+
+    .app-card:hover .arrow { color: var(--accent); }
+
+    footer {
+      margin-top: 3rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2a8 8 0 1 1 0 16A8 8 0 0 1 12 4zm-.5 3v6.25l4.5 2.6-.75 1.3L10.5 14V7h1z"/>
+      </svg>
+    </div>
+    <h1>App Policies</h1>
+    <p class="subtitle">Privacy policies for our iOS apps.</p>
+
+    <div class="apps">
+      <a class="app-card" href="./Intervalo/">
+        <div class="app-info">
+          <div class="app-name">Intervalo</div>
+          <div class="app-desc">Privacy Policy</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <footer>© 2026 Patrycja Rychlik</footer>
+  </div>
+</body>
+</html>
