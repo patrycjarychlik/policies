@@ -32,9 +32,21 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    .page-shell {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 2rem;
+    }
+
     .container {
       max-width: 560px;
       width: 100%;
+      margin: 0 auto;
       text-align: center;
     }
 
@@ -120,35 +132,40 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <a class="back" href="../">← All Apps</a>
-    <div class="logo">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2a8 8 0 1 1 0 16A8 8 0 0 1 12 4zm-.5 3v6.25l4.5 2.6-.75 1.3L10.5 14V7h1z"/>
-      </svg>
-    </div>
-    <h1>Intervalo</h1>
-    <p class="subtitle">Privacy and support information for the Intervalo mobile application.</p>
-
-    <div class="apps">
-      <a class="app-card" href="./privacy/">
-        <div class="app-info">
-          <div class="app-name">Privacy Policy</div>
-          <div class="app-desc">Read how Intervalo handles data.</div>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-
-      <a class="app-card" href="./Support/">
-        <div class="app-info">
-          <div class="app-name">Support</div>
-          <div class="app-desc">Get help, contact details, and answers.</div>
-        </div>
-        <span class="arrow">→</span>
-      </a>
+  <div class="page-shell">
+    <div class="topbar">
+      <a class="back" href="../">← All Apps</a>
     </div>
 
-    <footer>© 2026 Patrycja Rychlik-Widera</footer>
+    <div class="container">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2a8 8 0 1 1 0 16A8 8 0 0 1 12 4zm-.5 3v6.25l4.5 2.6-.75 1.3L10.5 14V7h1z"/>
+        </svg>
+      </div>
+      <h1>Intervalo</h1>
+      <p class="subtitle">Privacy and support information for the Intervalo mobile application.</p>
+
+      <div class="apps">
+        <a class="app-card" href="./privacy/">
+          <div class="app-info">
+            <div class="app-name">Privacy Policy</div>
+            <div class="app-desc">Read how Intervalo handles data.</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a class="app-card" href="./Support/">
+          <div class="app-info">
+            <div class="app-name">Support</div>
+            <div class="app-desc">Get help, contact details, and answers.</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <footer>© 2026 Patrycja Rychlik-Widera</footer>
+    </div>
   </div>
 </body>
 </html>
