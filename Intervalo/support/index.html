@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support – Intervalo</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f13;
+      --surface: #1a1a22;
+      --border: #2a2a38;
+      --accent: #7c6aff;
+      --text: #e8e8f0;
+      --muted: #8888aa;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page { max-width: 680px; margin: 0 auto; }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .back:hover { color: var(--accent); text-decoration: none; }
+
+    .app-badge {
+      display: inline-block;
+      background: rgba(124, 106, 255, 0.12);
+      border: 1px solid rgba(124, 106, 255, 0.3);
+      border-radius: 8px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.35rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p { color: #b8b8d0; }
+
+    .support-card,
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.2rem 1.4rem;
+    }
+
+    .support-card {
+      margin-top: 1rem;
+    }
+
+    .support-card strong,
+    .faq-item strong {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .faq {
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 1.5rem;
+    }
+
+    .faq-item p + p {
+      margin-top: 0.6rem;
+    }
+
+    .actions {
+      margin-top: 1.4rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.78rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../">← Intervalo</a>
+    <div class="app-badge">iOS App</div>
+    <h1>Support</h1>
+    <div class="meta">Customer support and common questions for Intervalo</div>
+
+    <p>If you need help with Intervalo, send a message to <a href="mailto:intervalo.app@gmail.com">intervalo.app@gmail.com</a>.</p>
+
+    <div class="support-card">
+      <strong>Best way to get help</strong>
+      <p>Include the device model, iOS version, and a short description of the issue. If the app shows an error, include the exact wording.</p>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item">
+        <strong>Question</strong>
+        <p>How do I report a bug?</p>
+        <p>Email a short description of what happened, what was expected, and the steps that led to the issue.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Question</strong>
+        <p>How do I delete my data?</p>
+        <p>Intervalo stores data only on the device. Removing the app deletes the locally stored app data.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Question</strong>
+        <p>I purchased a subscription or feature and need billing help.</p>
+        <p>Purchases are managed by Apple. Billing, refunds, and subscription management are handled through the App Store account settings.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Question</strong>
+        <p>How quickly can I expect a reply?</p>
+        <p>Support requests are answered by email as soon as possible. Response time can vary depending on volume and weekends.</p>
+      </div>
+    </div>
+
+    <p class="actions"><a href="../privacy/">View the Privacy Policy</a></p>
+
+    <footer>
+      <span>© 2026 Patrycja Rychlik-Widera</span>
+      <span>Intervalo Support</span>
+    </footer>
+  </div>
+</body>
+</html>
